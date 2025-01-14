@@ -29,17 +29,17 @@ my $sb_version = VersionParser->new($node1);
 my $node2 = $sb->get_dbh_for('node2');
 my $node3 = $sb->get_dbh_for('node3');
 
-if ( !$node1 ) {
-   plan skip_all => 'Cannot connect to cluster node1';
-}
-elsif ( !$node2 ) {
-   plan skip_all => 'Cannot connect to cluster node2';
-}
-elsif ( !$node3 ) {
-   plan skip_all => 'Cannot connect to cluster node3';
-}
-elsif ( !$sb->is_cluster_mode ) {
-   plan skip_all => "PXC tests";
+my %checks = (
+    'Cannot connect to cluster node1' => !$node1,
+    'Cannot connect to cluster node2' => !$node2,
+    'Cannot connect to cluster node3' => !$node3,
+    'PXC tests'                       => !$sb->is_cluster_mode,
+);
+
+for my $message (keys %checks) {
+    if ( $checks{$message} ) {
+        plan skip_all => $message;
+    }
 }
 
 my $node1_dsn = $sb->dsn_for('node1');
