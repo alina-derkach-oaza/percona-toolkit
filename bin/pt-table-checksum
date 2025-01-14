@@ -6686,8 +6686,6 @@ sub _nibble_params {
       );
       PTDEBUG && _d('Ascend params:', Dumper($asc));
 
-      my $force_concat_enums;
-
 
       my $from     = "$tbl->{name} FORCE INDEX(`$index`)";
       my $order_by = join(', ', map {$q->quote($_)} @{$index_cols});
