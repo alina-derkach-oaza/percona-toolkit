@@ -9397,12 +9397,12 @@ sub main {
       };
       if ( $EVAL_ERROR ) {
          chomp $EVAL_ERROR;
-         _die("Error checking --max-load or --critial-load: $EVAL_ERROR.  "
+         _die("Error checking --max-load or --critical-load: $EVAL_ERROR.  "
             . "Check that the variables specified for --max-load and "
             . "--critical-load are spelled correctly and exist in "
             . "SHOW GLOBAL STATUS.  Current values for these options are:\n"
             . "  --max-load " . (join(',', @{$o->get('max-load')})) . "\n"
-            . "  --critial-load "  . (join(',', @{$o->get('critical-load')}))
+            . "  --critical-load "  . (join(',', @{$o->get('critical-load')}))
             , INVALID_PARAMETERS);
       }
 
