@@ -58,6 +58,7 @@ Miscellaneous
 .. toctree::
    :maxdepth: 2
 
+   get-help
    bugs
    ipv6_support
    special_option_types

@@ -31,3 +31,8 @@ body,input{
     font-feature-settings:"kern","liga";
     font-family:"Chivo", "Colfax", "Franziska", Helvetica, Arial, sans-serif;
 }
+
+.md-sidebar__inner {
+    font-size: 0.65rem;   /* Font size */
+    line-height: 1.6;
+}
